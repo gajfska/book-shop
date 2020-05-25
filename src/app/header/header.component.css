@@ -1,0 +1,27 @@
+
+
+.example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    width: 120px;
+}
+
+.example-button-row {
+    display: table-cell;
+}
+
+.example-button-row button {
+    display: table-cell;
+    margin-right: 8px;
+}
+
+
+
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}

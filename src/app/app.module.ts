@@ -3,14 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
-import {MatDividerModule} from '@angular/material/divider';
 import {HeaderComponent} from './header/header.component';
 import {BooklistComponent} from './booklist/booklist.component';
 import {CartComponent} from './cart/cart.component';
 import {FormComponent} from './form/form.component';
+import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -19,10 +18,9 @@ import {FormComponent} from './form/form.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatSliderModule,
-    MatGridListModule,
+      MatIconModule,
     MatButtonModule,
-    MatDividerModule
+      MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
