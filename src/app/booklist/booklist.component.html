@@ -1,3 +1,24 @@
 <h3>Hello booklist</h3>
 
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <a href="#" class="list-group-item clearfix" *ngFor="let book of books">
+                <h4 class="list-group-item-heading"> {{book.name}} </h4>
+                <p class="list-group-item-text"> {{book.author}} </p>
+                <div class="pull-left">
+                    <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 200px">
+                </div>
+                <div class="pull-right">
+                    <p>liczba stron</p>
+                    <button class="btn btn-primary"> Dodaj do koszyka </button>
+                    <br>
+                    <br>
+                    <button class="btn btn-primary"> Zamów </button>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">book</div>
+        <div class="col-md-4">book</div>
+    </div>
+</div>

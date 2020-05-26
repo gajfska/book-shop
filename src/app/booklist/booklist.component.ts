@@ -16,7 +16,9 @@ export interface Tile {
     styleUrls: ['./booklist.component.css']
 })
 export class BooklistComponent {
-    book: Book[] = [];
+    books: Book[] = [
+        new Book('Marina', 'Carlos Ruiz Zafon', 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSWpFJVU19Pm_6E-cRpFS5O-eDE28TwvfIwIxieMIVdfIT5gFiDwqY78tdb4w&usqp=CAc')
+    ];
 
 
 }
