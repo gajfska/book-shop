@@ -3,14 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
 import {HeaderComponent} from './header/header.component';
 import {BooklistComponent} from './booklist/booklist.component';
 import {CartComponent} from './cart/cart.component';
 import {FormComponent} from './form/form.component';
-import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
 import {CartEditComponent} from './cart/cart-edit/cart-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -18,10 +16,7 @@ import {CartEditComponent} from './cart/cart-edit/cart-edit.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-      MatIconModule,
-    MatButtonModule,
-      MatToolbarModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
