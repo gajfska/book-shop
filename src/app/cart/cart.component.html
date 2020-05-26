@@ -1,2 +1,43 @@
 <h3>Hello cart</h3>
-<app-cart-edit></app-cart-edit>
+
+
+<div class="container">
+    <div class="row">
+        <app-cart-edit></app-cart-edit>
+
+        <hr>
+        <div class="list-group">
+            <div class="list-group-item" style="padding-bottom: 50px">
+                <div class="col-md-4">
+                    <h4>Produkt</h4>
+                </div>
+                <div class="col-md-4">
+                    <h4>Ilość</h4>
+                </div>
+                <div class="col-md-4">
+                    <h4>Cena</h4>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <br>
+        <div class="list-group">
+            <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books">
+                <div class="col-md-4">
+                    <div class="pull-left">
+                        <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 50px">
+                    </div>
+                    <a href="#">{{book.name}}</a>
+                    <br>
+                    <a href="#">{{book.author}}</a>
+                </div>
+                <div class="col-md-4">
+                    ilosc
+                </div>
+                <div class="col-md-4">
+                    {{book.price}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
