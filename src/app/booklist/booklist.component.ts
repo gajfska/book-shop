@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Book} from './book.model';
 
 @Component({
     selector: 'app-booklist',
@@ -6,5 +7,7 @@ import {Component} from '@angular/core';
     styleUrls: ['./booklist.component.css']
 })
 export class BooklistComponent {
+
+    book: Book[] = [];
 
 }

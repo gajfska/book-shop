@@ -10,10 +10,11 @@ import {CartComponent} from './cart/cart.component';
 import {FormComponent} from './form/form.component';
 import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {CartEditComponent} from './cart/cart-edit/cart-edit.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, BooklistComponent, CartComponent, FormComponent
+    AppComponent, HeaderComponent, BooklistComponent, CartComponent, FormComponent, CartEditComponent
   ],
   imports: [
     BrowserModule,
