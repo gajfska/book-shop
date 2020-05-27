@@ -1,6 +1,3 @@
-<h3>Hello cart</h3>
-
-
 <div class="container">
     <div class="row">
         <app-cart-edit></app-cart-edit>
@@ -32,7 +29,11 @@
                     <a href="#">{{book.author}}</a>
                 </div>
                 <div class="col-md-4">
-                    ilosc
+                    <div class="select-quantity">
+                        <button class="decrease">-</button>
+                        <input class="number" type="text">
+                        <button class="increase">+</button>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     {{book.price}}
