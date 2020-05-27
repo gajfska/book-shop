@@ -1,13 +1,16 @@
-<app-header></app-header>
+<app-header (featureSelected)="onNavigate($event)"></app-header>
 
-<section>
-  <div>
-    <app-booklist></app-booklist>
+<div class="container">
+  <div class="row">
+    <div>
+      <app-booklist *ngIf="loadedFeature === 'shopping'"></app-booklist>
+    </div>
+    <div>
+      <app-cart *ngIf="loadedFeature !== 'shopping'"></app-cart>
+    </div>
+    <div>
+      <app-form></app-form>
+    </div>
   </div>
-  <div>
-    <app-cart></app-cart>
-  </div>
-  <div>
-    <app-form></app-form>
-  </div>
-</section>
+</div>
+
