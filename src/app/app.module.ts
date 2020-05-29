@@ -7,12 +7,12 @@ import {HeaderComponent} from './header/header.component';
 import {BooklistComponent} from './booklist/booklist.component';
 import {CartComponent} from './cart/cart.component';
 import {FormComponent} from './form/form.component';
-import {CartEditComponent} from './cart/cart-edit/cart-edit.component';
+import {BookItemComponent} from './booklist/book-item/book-item.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, BooklistComponent, CartComponent, FormComponent, CartEditComponent
+    AppComponent, HeaderComponent, BooklistComponent, CartComponent, FormComponent, BookItemComponent
   ],
   imports: [
     BrowserModule,
