@@ -8,6 +8,7 @@ import {BooklistComponent} from './booklist/booklist.component';
 import {CartComponent} from './cart/cart.component';
 import {FormComponent} from './form/form.component';
 import {BookItemComponent} from './booklist/book-item/book-item.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {BookItemComponent} from './booklist/book-item/book-item.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+      FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
