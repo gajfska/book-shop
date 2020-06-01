@@ -2,7 +2,7 @@ export class Book {
     public name: string;
     public author: string;
     public image: string;
-    public pages: number;
+    public pages?: number;
     public price: number;
     public amount: number;
 

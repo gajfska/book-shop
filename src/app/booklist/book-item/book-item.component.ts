@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Book} from '../../shared/book.model';
+import {BookService} from '../book.service';
 
 @Component({
     selector: 'app-book-item',
@@ -8,4 +9,6 @@ import {Book} from '../../shared/book.model';
 })
 export class BookItemComponent {
    @Input() book: Book;
+
+   constructor() {}
 }

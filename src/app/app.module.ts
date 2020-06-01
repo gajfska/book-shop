@@ -10,6 +10,7 @@ import {FormComponent} from './form/form.component';
 import {BookItemComponent} from './booklist/book-item/book-item.component';
 import {FormsModule} from '@angular/forms';
 import {BookService} from './booklist/book.service';
+import {AppRoutingModule} from './app-routing.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {BookService} from './booklist/book.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-      FormsModule
+      FormsModule,
+      AppRoutingModule
   ],
   providers: [BookService],
   bootstrap: [AppComponent]

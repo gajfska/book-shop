@@ -3,14 +3,7 @@
 <div class="container">
   <div class="row">
     <div>
-      <app-booklist *ngIf="loadedFeature === 'shopping'"></app-booklist>
-    </div>
-    <div>
-      <app-cart *ngIf="loadedFeature !== 'shopping'"></app-cart>
-    </div>
-    <div>
-      <app-form></app-form>
-    </div>
+      <router-outlet></router-outlet>
   </div>
 </div>
 
