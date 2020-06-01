@@ -42,7 +42,7 @@
             </div>
         </form>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="submitted">
         <p>User name: {{user.name}}</p>
         <p>User name: {{adres.street}}</p>
     </div>

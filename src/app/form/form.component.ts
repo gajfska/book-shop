@@ -21,8 +21,10 @@ export class FormComponent {
         city: '',
         zipCode: ''
     };
+    submitted = false;
 
     onSubmit() {
+        this.submitted = true;
         this.user.name = this.singForm.value.userInfo.name;
         this.adres.street = this.singForm.value.userAdres.street;
     }
