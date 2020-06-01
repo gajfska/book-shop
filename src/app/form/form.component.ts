@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
     selector: 'app-form',
@@ -7,5 +8,23 @@ import {Component} from '@angular/core';
 })
 
 export class FormComponent {
+    @ViewChild('f' , {static: false}) singForm: NgForm;
+    user = {
+        name: '',
+        surname: '',
+        phone: '',
+        email: ''
+    };
+    adres = {
+        street: '',
+        buildNumber: '',
+        city: '',
+        zipCode: ''
+    };
+
+    onSubmit() {
+        this.user.name = this.singForm.value.userInfo.name;
+        this.adres.street = this.singForm.value.userAdres.street;
+    }
 
 }

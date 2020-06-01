@@ -1,42 +1,49 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-6">
-           <h2>Dane kontaktowe</h2>
-            <form>
-                <div id="user-info">
-                    <div class="form-group">
-                        <label for="name">Imię</label>
-                        <input type="text" id="name" class="form-control">
-                        <label for="surname">Nazwisko</label>
-                        <input type="text" id="surname" class="form-control">
+        <form (ngSubmit)="onSubmit()" #f="ngForm">
+            <div class="col-lg-6">
+               <h2>Dane kontaktowe</h2>
+
+                    <div id="user-info" ngModelGroup="userInfo" #userInfo="ngModelGroup">
+                        <div class="form-group">
+                            <label for="name">Imię</label>
+                            <input type="text" id="name" class="form-control" ngModel name="name" required>
+                            <label for="surname">Nazwisko</label>
+                            <input type="text" id="surname" class="form-control" ngModel name="surname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Numer kontaktowy</label>
+                            <input type="text" id="phone" class="form-control" ngModel name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" class="form-control" ngModel name="email" required email #email="ngModel">
+                            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Numer kontaktowy</label>
-                        <input type="text" id="phone" class="form-control">
+                <p *ngIf="!userInfo.valid && userInfo.touched">User data is invalid!</p>
+            </div>
+            <div class="col-lg-6">
+                <h2>Adres</h2>
+                    <div id="user-adres" ngModelGroup="userAdres" #userAdres="ngModelGroup">
+                        <div class="form-group">
+                            <label for="street">Ulica</label>
+                            <input type="text" id="street" class="form-control" ngModel name="street" required>
+                            <label for="build-number">Numer budynku</label>
+                            <input type="text" id="build-number" class="form-control" ngModel name="build-number" required>
+                            <label for="city">Miasto</label>
+                            <input type="text" id="city" class="form-control" ngModel name="city" required>
+                            <label for="zip-code">Kod pocztowy</label>
+                            <input type="text" id="zip-code" class="form-control" ngModel name="zip-code" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" id="email" class="form-control">
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="col-lg-6">
-            <h2>Adres</h2>
-            <form>
-                <div id="user-adres">
-                    <div class="form-group">
-                        <label for="street">Ulica</label>
-                        <input type="text" id="street" class="form-control">
-                        <label for="build-number">Numer budynku</label>
-                        <input type="text" id="build-number" class="form-control">
-                        <label for="city">Miasto</label>
-                        <input type="text" id="city" class="form-control">
-                        <label for="zip-code">Kod pocztowy</label>
-                        <input type="text" id="zip-code" class="form-control">
-                    </div>
-                </div>
-            </form>
-        </div>
+                    <br>
+                    <button class="btn btn-primary" type="submit" [disabled]="!f.valid"> Dalej </button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <p>User name: {{user.name}}</p>
+        <p>User name: {{adres.street}}</p>
     </div>
 </div>
