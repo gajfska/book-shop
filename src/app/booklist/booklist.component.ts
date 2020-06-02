@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Book} from '../shared/book.model';
 import {BookService} from './book.service';
+import {DataShopService} from '../shared/data-shop.service';
+import {Subscription} from 'rxjs';
 
 
 @Component({
@@ -10,13 +12,22 @@ import {BookService} from './book.service';
 })
 export class BooklistComponent implements OnInit {
     books: Book[];
+    subscription: Subscription;
 
-    constructor(private bookService: BookService) {
+    constructor(private bookService: BookService,
+                private dataShopService: DataShopService) {
 
     }
 
     ngOnInit() {
+        this.subscription = this.bookService.booksChanged
+            .subscribe(
+                (books: Book[]) => {
+                    this.books = books;
+                }
+            );
         this.books = this.bookService.getBook();
+        this.dataShopService.fetchBooks();
     }
 
 }

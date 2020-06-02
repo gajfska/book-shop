@@ -11,6 +11,7 @@ import {BookItemComponent} from './booklist/book-item/book-item.component';
 import {FormsModule} from '@angular/forms';
 import {BookService} from './booklist/book.service';
 import {AppRoutingModule} from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {AppRoutingModule} from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
       FormsModule,
-      AppRoutingModule
+      AppRoutingModule,
+      HttpClientModule
   ],
   providers: [BookService],
   bootstrap: [AppComponent]
