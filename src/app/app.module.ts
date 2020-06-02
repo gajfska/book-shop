@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import {BookService} from './booklist/book.service';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
+import {CartService} from './cart/cart.service';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import {HttpClientModule} from '@angular/common/http';
       AppRoutingModule,
       HttpClientModule
   ],
-  providers: [BookService],
+  providers: [BookService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

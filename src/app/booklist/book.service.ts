@@ -1,13 +1,16 @@
 import {Book} from '../shared/book.model';
 import {Subject} from 'rxjs';
+import {CartService} from '../cart/cart.service';
+import {Injectable} from '@angular/core';
 
+
+@Injectable({providedIn: 'root'})
 export class BookService {
     booksChanged = new Subject<Book[]>();
     private books: Book[] = [];
 
-   getBook() {
-       return this.books.slice();
-   }
+    constructor( private cartService: CartService) {}
+
 
    setBook(books: Book[]) {
        this.books = books;
@@ -15,8 +18,6 @@ export class BookService {
    }
 
    addBookToCart(book: Book) {
-       this.books.push(book);
-       this.booksChanged.next(this.books.slice());
-       console.log(book);
+       this.cartService.addBook(book);
    }
 }

@@ -1,0 +1,22 @@
+import {Book} from '../shared/book.model';
+import {Subject} from 'rxjs';
+
+export class CartService {
+    private books: Book[] = [];
+    booksChanged = new Subject<Book[]>();
+
+    getBook() {
+        return this.books.slice();
+    }
+
+    addBook(book: Book) {
+        this.books.push(book);
+        this.booksChanged.next(this.books.slice());
+    }
+
+    deleteBook(index: number) {
+        this.books.splice(index, 1);
+        this.booksChanged.next(this.books.slice());
+    }
+
+}
