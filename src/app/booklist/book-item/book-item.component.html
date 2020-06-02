@@ -1,4 +1,4 @@
-<a href="#" class="list-group-item clearfix">
+<a class="list-group-item clearfix">
     <h4 class="list-group-item-heading"> {{book.name}} </h4>
     <p class="list-group-item-text"> {{book.author}} </p>
     <div class="pull-left">
@@ -9,7 +9,7 @@
         <p>{{book.pages}}</p>
         <p>Cena:</p>
         <p>{{book.price}}</p>
-        <button class="btn btn-primary"> Dodaj do koszyka </button>
+        <button class="btn btn-primary" (click)="onAddToCart()"> Dodaj do koszyka </button>
         <br>
         <br>
         <button class="btn btn-primary"> Zamów </button>

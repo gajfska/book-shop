@@ -23,9 +23,9 @@
                     <div class="pull-left">
                         <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 50px">
                     </div>
-                    <a href="#">{{book.name}}</a>
+                    <a>{{book.name}}</a>
                     <br>
-                    <a href="#">{{book.author}}</a>
+                    <a>{{book.author}}</a>
                 </div>
                 <div class="col-md-4">
                     <div class="select-quantity">
@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="pull-right">
-                        <button>x</button>
+                        <button (click)="onDelete()">x</button>
                     </div>
                     <div class="pull-left">
                         {{book.price}}

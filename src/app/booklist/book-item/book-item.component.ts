@@ -10,5 +10,9 @@ import {BookService} from '../book.service';
 export class BookItemComponent {
    @Input() book: Book;
 
-   constructor() {}
+   constructor( private bookService: BookService) {}
+
+    onAddToCart() {
+        this.bookService.addBookToCart(this.book);
+    }
 }
