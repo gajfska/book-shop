@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Book} from '../shared/book.model';
 import {Subscription} from 'rxjs';
 import {CartService} from './cart.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
     selector: 'app-cart',
@@ -14,27 +15,31 @@ export class CartComponent implements OnInit, OnDestroy {
     private subscription: Subscription;
     editedItemIndex: number;
 
-    constructor(private cartService: CartService) { }
+    constructor(private cartService: CartService) {
+        console.log('ojejeu');
+    }
 
     ngOnInit() {
         this.books = this.cartService.getBook();
-        this.subscription = this.cartService.booksChanged
-            .subscribe(
-                (books: Book[]) => {
-                    this.books = books;
-                },
-            (index: number) => {
-                this.editedItemIndex = index;
-            }
-            );
+        console.log('eloszka!');
+        // this.subscription = this.cartService.booksChanged
+        //     .subscribe(
+        //         (books: Book[]) => {
+        //             this.books = books;
+        //             console.log(this.books);
+        //         }
+        //     );
     }
 
     onDelete() {
         this.cartService.deleteBook(this.editedItemIndex);
     }
 
+    onSubmit(form: NgForm) {
+    }
+
     ngOnDestroy() {
-        this.subscription.unsubscribe();
+        // this.subscription.unsubscribe();
     }
 
 }

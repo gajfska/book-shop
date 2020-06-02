@@ -28,11 +28,14 @@
                     <a>{{book.author}}</a>
                 </div>
                 <div class="col-md-4">
-                    <div class="select-quantity">
-                        <button class="decrease">-</button>
-                        <input class="number" type="text">
-                        <button class="increase">+</button>
-                    </div>
+                    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                        <input type="number" id="amount" class="form-control" name="amount" ngModel required pattern="^[1-9]+[0-9]*$">
+                    </form>
+                    <!--<div class="select-quantity">-->
+                        <!--<button class="decrease">-</button>-->
+                         <!--<input class="number" type="text">-->
+                        <!--<button class="increase">+</button>-->
+                    <!--</div>-->
                 </div>
                 <div class="col-md-4">
                     <div class="pull-right">
@@ -44,5 +47,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row">
+        <!--<button class="btn btn-primary" type="submit" [disabled]="!f.valid"> Dalej </button>-->
     </div>
 </div>

@@ -1,5 +1,6 @@
 import {Book} from '../shared/book.model';
 import {Subject} from 'rxjs';
+import {NgForm} from '@angular/forms';
 
 export class CartService {
     private books: Book[] = [];
@@ -12,6 +13,7 @@ export class CartService {
     addBook(book: Book) {
         this.books.push(book);
         this.booksChanged.next(this.books.slice());
+        console.log(this.books.slice());
     }
 
     deleteBook(index: number) {
