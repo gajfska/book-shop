@@ -37,9 +37,47 @@
                             <input type="text" id="zip-code" class="form-control" ngModel name="zip-code" required>
                         </div>
                     </div>
-                    <br>
-                    <button class="btn btn-primary" type="submit" [disabled]="!f.valid"> Dalej </button>
             </div>
+            <br>
+
+            <div class="list-group col-sm-12">
+                <div class="list-group-item" style="padding-bottom: 50px">
+                    <div class="col-md-4">
+                        <h4>Produkt</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Ilość</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Cena</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-group col-md-12">
+                <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books">
+                    <div class="col-md-4">
+                        <div class="pull-left">
+                            <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 50px">
+                        </div>
+                        <a>{{book.name}}</a>
+                        <br>
+                        <a>{{book.author}}</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a>jeden</a>
+                    </div>
+                    <div class="col-md-4">
+                        {{book.price}}
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div>
+                <button class="btn btn-primary" type="submit" [disabled]="!f.valid"> Dalej </button>
+            </div>
+
         </form>
     </div>
     <div class="row" *ngIf="submitted">

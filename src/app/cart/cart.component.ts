@@ -13,15 +13,12 @@ export class CartComponent implements OnInit, OnDestroy {
 
     books: Book[];
     private subscription: Subscription;
-    editedItemIndex: number;
 
     constructor(private cartService: CartService) {
-        console.log('ojejeu');
     }
 
     ngOnInit() {
         this.books = this.cartService.getBook();
-        console.log('eloszka!');
         // this.subscription = this.cartService.booksChanged
         //     .subscribe(
         //         (books: Book[]) => {
@@ -32,7 +29,6 @@ export class CartComponent implements OnInit, OnDestroy {
     }
 
     onDelete() {
-        this.cartService.deleteBook(this.editedItemIndex);
     }
 
     onSubmit(form: NgForm) {

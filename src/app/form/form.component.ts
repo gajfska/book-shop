@@ -1,5 +1,8 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {Book} from '../shared/book.model';
+import {CartService} from '../cart/cart.service';
+import {FormService} from './form.service';
 
 @Component({
     selector: 'app-form',
@@ -7,7 +10,7 @@ import {NgForm} from '@angular/forms';
     styleUrls: ['./form.component.css']
 })
 
-export class FormComponent {
+export class FormComponent  implements OnInit {
     @ViewChild('f' , {static: false}) singForm: NgForm;
     user = {
         name: '',
@@ -23,10 +26,18 @@ export class FormComponent {
     };
     submitted = false;
 
+    books: Book[];
+
+    constructor(private formService: FormService) {}
+
     onSubmit() {
         this.submitted = true;
         this.user.name = this.singForm.value.userInfo.name;
         this.adres.street = this.singForm.value.userAdres.street;
+    }
+
+    ngOnInit() {
+        this.books = this.formService.getBook();
     }
 
 }

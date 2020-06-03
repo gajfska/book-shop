@@ -15,4 +15,8 @@ export class BookItemComponent {
     onAddToCart() {
         this.bookService.addBookToCart(this.book);
     }
+
+    onAddToForm() {
+        this.bookService.addBookToForm(this.book);
+    }
 }

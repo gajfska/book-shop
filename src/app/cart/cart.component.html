@@ -4,51 +4,57 @@
         <hr>
         <div class="list-group">
             <div class="list-group-item" style="padding-bottom: 50px">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <h4>Produkt</h4>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
+                    <h4>Ilość w magazynie</h4>
+                </div>
+                <div class="col-md-3">
                     <h4>Ilość</h4>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <h4>Cena</h4>
                 </div>
             </div>
         </div>
         <hr>
         <br>
-        <div class="list-group">
-            <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books">
-                <div class="col-md-4">
-                    <div class="pull-left">
-                        <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 50px">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="list-group">
+                <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books">
+                    <div class="col-md-3">
+                        <div class="pull-left">
+                            <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 50px">
+                        </div>
+                        <a>{{book.name}}</a>
+                        <br>
+                        <a>{{book.author}}</a>
                     </div>
-                    <a>{{book.name}}</a>
-                    <br>
-                    <a>{{book.author}}</a>
-                </div>
-                <div class="col-md-4">
-                    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-                        <input type="number" id="amount" class="form-control" name="amount" ngModel required pattern="^[1-9]+[0-9]*$">
-                    </form>
-                    <!--<div class="select-quantity">-->
-                        <!--<button class="decrease">-</button>-->
-                         <!--<input class="number" type="text">-->
-                        <!--<button class="increase">+</button>-->
-                    <!--</div>-->
-                </div>
-                <div class="col-md-4">
-                    <div class="pull-right">
-                        <button (click)="onDelete()">x</button>
+                    <div class="col-md-3">
+                        {{book.amount}}
                     </div>
-                    <div class="pull-left">
-                        {{book.price}}
+                    <div class="col-md-3">
+                            <input type="number" id="amount" class="form-control" name="amount" ngModel required pattern="^[1-9]+[0-9]*$">
+                        <!--<div class="select-quantity">-->
+                            <!--<button class="decrease">-</button>-->
+                             <!--<input class="number" type="text">-->
+                            <!--<button class="increase">+</button>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="col-md-3">
+                        <div class="pull-right">
+                            <button (click)="onDelete()">x</button>
+                        </div>
+                        <div class="pull-left">
+                            {{book.price}}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <!--<button class="btn btn-primary" type="submit" [disabled]="!f.valid"> Dalej </button>-->
+            <div class="row">
+                <button class="btn btn-primary" type="submit" [disabled]="!f.valid"> Dalej </button>
+            </div>
+        </form>
     </div>
 </div>
