@@ -24,6 +24,6 @@ export class BookService {
    }
 
     addBookToForm(book: Book) {
-        this.formService.addBook(book);
+        this.cartService.addBook(book);
     }
 }

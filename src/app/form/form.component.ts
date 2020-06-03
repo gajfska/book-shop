@@ -28,7 +28,8 @@ export class FormComponent  implements OnInit {
 
     books: Book[];
 
-    constructor(private formService: FormService) {}
+    constructor(private formService: FormService,
+                private cartService: CartService) {}
 
     onSubmit() {
         this.submitted = true;
@@ -37,7 +38,8 @@ export class FormComponent  implements OnInit {
     }
 
     ngOnInit() {
-        this.books = this.formService.getBook();
+        // this.books = this.formService.getBook();
+        this.books = this.cartService.getBook();
     }
 
 }

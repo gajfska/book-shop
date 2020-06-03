@@ -12,6 +12,7 @@ import {NgForm} from '@angular/forms';
 export class CartComponent implements OnInit, OnDestroy {
 
     books: Book[];
+    book: Book;
     private subscription: Subscription;
 
     constructor(private cartService: CartService) {
@@ -32,6 +33,10 @@ export class CartComponent implements OnInit, OnDestroy {
     }
 
     onSubmit(form: NgForm) {
+    }
+
+    onAddToCartService() {
+
     }
 
     ngOnDestroy() {

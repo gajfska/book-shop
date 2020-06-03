@@ -13,7 +13,6 @@ export class DataShopService {
             .get<Book[]>('https://ng-bookshop.firebaseio.com/books.json')
             .subscribe(book => {
                 this.bookService.setBook(book);
-                console.log(book);
             });
     }
 }

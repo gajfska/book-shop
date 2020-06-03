@@ -26,7 +26,6 @@ export class BooklistComponent implements OnInit {
                     this.books = books;
                 }
             );
-        // this.books = this.bookService.getBook();
         this.dataShopService.fetchBooks();
     }
 

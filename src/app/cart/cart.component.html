@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="row">
-                <button class="btn btn-primary" type="submit" [disabled]="!f.valid"> Dalej </button>
+                <button class="btn btn-primary" type="submit" [disabled]="!f.valid" (click)="onAddToCartService()" routerLink="/form"> Dalej </button>
             </div>
         </form>
     </div>
