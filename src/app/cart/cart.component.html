@@ -35,9 +35,16 @@
                         {{book.amount}}
                     </div>
                     <div class="col-md-3">
-                            <input type="number" id="amount" class="form-control" name="amount" ngModel required pattern="^[1-9]+[0-9]*$">
+                        <button class="decrease">-</button>
+                        <input type="text"
+                                   id="quantity"
+                                   name="quantity"
+                               [(ngModel)]="book.quantity"
+                               (input)="book.quantity = $event.target.value">
+                        <button class="increase" (click)="upQuantity()">+</button>
+
                         <!--<div class="select-quantity">-->
-                            <!--<button class="decrease">-</button>-->
+                            <!--<button class="decrease">-</button>   ngModel required pattern="^[1-9]+[0-9]*$"  -->
                              <!--<input class="number" type="text">-->
                             <!--<button class="increase">+</button>-->
                         <!--</div>-->
@@ -53,7 +60,7 @@
                 </div>
             </div>
             <div class="row">
-                <button class="btn btn-primary" type="submit" [disabled]="!f.valid" (click)="onAddToCartService()" routerLink="/form"> Dalej </button>
+                <button class="btn btn-primary" type="submit" [disabled]="!f.valid" routerLink="/form"> Dalej </button>
             </div>
         </form>
     </div>

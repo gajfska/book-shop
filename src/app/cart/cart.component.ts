@@ -29,15 +29,14 @@ export class CartComponent implements OnInit, OnDestroy {
         //     );
     }
 
+    upQuantity() {
+        console.log(this.books);
+    }
+
     onDelete() {
     }
 
-    onSubmit(form: NgForm) {
-    }
-
-    onAddToCartService() {
-
-    }
+    onSubmit(form: NgForm) {}
 
     ngOnDestroy() {
         // this.subscription.unsubscribe();

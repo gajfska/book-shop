@@ -10,7 +10,13 @@
                 <li routerLinkActive="active"><a routerLink="/form"> Form </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li routerLinkActive="active"><a routerLink="/cart">Cart</a></li>
+                <button mat-icon-button color="black"
+                        matBadge="15"
+                        matBadgeColor="warn"
+                        routerLink="/cart"
+                        style="margin-top: 15px">
+                    <mat-icon>shopping_cart</mat-icon>
+                </button>
             </ul>
         </div>
     </div>

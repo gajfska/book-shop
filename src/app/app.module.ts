@@ -13,6 +13,9 @@ import {BookService} from './booklist/book.service';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {CartService} from './cart/cart.service';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import {CartService} from './cart/cart.service';
     BrowserAnimationsModule,
       FormsModule,
       AppRoutingModule,
-      HttpClientModule
+      HttpClientModule,
+      MatButtonModule,
+      MatIconModule,
+      MatBadgeModule
   ],
   providers: [BookService, CartService],
   bootstrap: [AppComponent]
