@@ -8,15 +8,15 @@ import {FormService} from '../form/form.service';
 @Injectable({providedIn: 'root'})
 export class BookService {
     booksChanged = new Subject<Book[]>();
-    private books: Book[] = [];
+    //private books: Book[] = [];
 
     constructor( private cartService: CartService,
                  private formService: FormService) {}
 
 
-   setBook(books: Book[]) {
-       this.books = books;
-       this.booksChanged.next(this.books.slice());
+   setBooks(books: Book[]) {
+       //this.books = books;
+       this.booksChanged.next(books.slice());
    }
 
    addBookToCart(book: Book) {

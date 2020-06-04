@@ -16,8 +16,7 @@ export class HeaderComponent implements DoCheck {
     constructor(private cartService: CartService) {}
 
     ngDoCheck() {
-        this.books = this.cartService.getBook();
+        this.books = this.cartService.getBooks();
         this.badgeCounter = this.books.length;
-        console.log(this.badgeCounter);
     }
 }

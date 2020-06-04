@@ -11,8 +11,8 @@ export class DataShopService {
     fetchBooks() {
         this.http
             .get<Book[]>('https://ng-bookshop.firebaseio.com/books.json')
-            .subscribe(book => {
-                this.bookService.setBook(book);
+            .subscribe(books => {
+                this.bookService.setBooks(books);
             });
     }
 }

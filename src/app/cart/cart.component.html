@@ -20,9 +20,9 @@
         </div>
         <hr>
         <br>
-        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <!--<form (ngSubmit)="onSubmit(f)" #f="ngForm">-->
             <div class="list-group">
-                <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books; let i = index" >
+                <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books; let i = index"  >
                     <div class="col-md-3">
                         <div class="pull-left">
                             <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 50px; margin-right: 10px">
@@ -35,13 +35,10 @@
                         {{book.amount}}
                     </div>
                     <div class="col-md-3">
-                        <button class="decrease">-</button>
-                        <input type="text"
-                                   id="quantity"
-                                   name="quantity"
-                               [(ngModel)]="book.quantity"
-                               (input)="book.quantity = $event.target.value">
-                        <button class="increase" (click)="upQuantity()">+</button>
+                        <button class="decrease" (click)="downQuantity(i)">-</button>
+                        <a>{{book.quantity}}</a>
+                               <!--[ngModelOptions]="{standalone: true}">-->
+                        <button class="increase" (click)="upQuantity(i)">+</button>
 
                         <!--<div class="select-quantity">-->
                             <!--<button class="decrease">-</button>   ngModel required pattern="^[1-9]+[0-9]*$"  -->
@@ -60,8 +57,8 @@
                 </div>
             </div>
             <div class="row">
-                <button class="btn btn-primary" type="submit" [disabled]="!f.valid" routerLink="/form"> Dalej </button>
+                <button class="btn btn-primary" type="submit" routerLink="/form"> Dalej </button>
             </div>
-        </form>
+        <!--</form>-->
     </div>
 </div>

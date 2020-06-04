@@ -10,13 +10,13 @@ export class CartService {
 
     constructor(private formService: FormService) {}
 
-    getBook() {
+    getBooks() {
         return this.books;
     }
 
     addBook(book: Book) {
         this.books.push(book);
-        this.booksChanged.next(this.books);
+        // this.booksChanged.next(this.books);
     }
 
     deleteBook(index: number) {

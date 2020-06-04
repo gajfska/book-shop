@@ -38,8 +38,8 @@ export class FormComponent  implements OnInit {
     }
 
     ngOnInit() {
-        // this.books = this.formService.getBook();
-        this.books = this.cartService.getBook();
+        // this.books = this.formService.getBooks();
+        this.books = this.cartService.getBooks();
     }
 
 }
