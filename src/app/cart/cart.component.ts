@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Book} from '../shared/book.model';
 import {Subscription} from 'rxjs';
 import {CartService} from './cart.service';
@@ -10,7 +10,7 @@ import {NgForm} from '@angular/forms';
     styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit, OnDestroy {
-
+    // @Input() index: number;
     books: Book[];
     book: Book;
     private subscription: Subscription;
@@ -33,7 +33,8 @@ export class CartComponent implements OnInit, OnDestroy {
         console.log(this.books);
     }
 
-    onDelete() {
+    onDelete(index: number) {
+        this.cartService.deleteBook(index);
     }
 
     onSubmit(form: NgForm) {}

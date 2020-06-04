@@ -11,17 +11,17 @@ export class CartService {
     constructor(private formService: FormService) {}
 
     getBook() {
-        return this.books.slice();
+        return this.books;
     }
 
     addBook(book: Book) {
         this.books.push(book);
-        this.booksChanged.next(this.books.slice());
+        this.booksChanged.next(this.books);
     }
 
     deleteBook(index: number) {
         this.books.splice(index, 1);
-        this.booksChanged.next(this.books.slice());
+        // this.booksChanged.next(this.books.slice());
     }
 
 }
