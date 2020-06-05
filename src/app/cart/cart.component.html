@@ -20,45 +20,40 @@
         </div>
         <hr>
         <br>
-        <!--<form (ngSubmit)="onSubmit(f)" #f="ngForm">-->
-            <div class="list-group">
-                <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books; let i = index"  >
-                    <div class="col-md-3">
-                        <div class="pull-left">
-                            <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 50px; margin-right: 10px">
-                        </div>
-                        <a>{{book.name}}</a>
-                        <br>
-                        <a>{{book.author}}</a>
+        <div class="list-group">
+            <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books; let i = index"  >
+                <div class="col-md-3">
+                    <div class="pull-left">
+                        <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 50px; margin-right: 10px">
                     </div>
-                    <div class="col-md-3">
-                        {{book.amount}}
+                    <a>{{book.name}}</a>
+                    <br>
+                    <a>{{book.author}}</a>
+                </div>
+                <div class="col-md-3">
+                    {{book.amount}}
+                </div>
+                <div class="col-md-3">
+                    <button class="decrease" (click)="downQuantity(i)">-</button>
+                    <a style="margin: 5px">{{book.quantity}}</a>
+                    <button class="increase" (click)="upQuantity(i)">+</button>
+                </div>
+                <div class="col-md-3">
+                    <div class="pull-right">
+                        <button (click)="onDelete(i)">x</button>
                     </div>
-                    <div class="col-md-3">
-                        <button class="decrease" (click)="downQuantity(i)">-</button>
-                        <a>{{book.quantity}}</a>
-                               <!--[ngModelOptions]="{standalone: true}">-->
-                        <button class="increase" (click)="upQuantity(i)">+</button>
-
-                        <!--<div class="select-quantity">-->
-                            <!--<button class="decrease">-</button>   ngModel required pattern="^[1-9]+[0-9]*$"  -->
-                             <!--<input class="number" type="text">-->
-                            <!--<button class="increase">+</button>-->
-                        <!--</div>-->
-                    </div>
-                    <div class="col-md-3">
-                        <div class="pull-right">
-                            <button (click)="onDelete(i)">x</button>
-                        </div>
-                        <div class="pull-left">
-                            {{book.price}}
-                        </div>
+                    <div class="pull-left">
+                        {{book.price}}
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <button class="btn btn-primary" type="submit" routerLink="/form"> Dalej </button>
-            </div>
-        <!--</form>-->
+        </div>
+        <div>
+            <p>Suma:</p>
+            <a></a>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary" type="submit" routerLink="/form"> Dalej </button>
+        </div>
     </div>
 </div>

@@ -13,7 +13,7 @@ export class BookItemComponent {
    constructor( private bookService: BookService) {}
 
     onAddToCart() {
-        this.bookService.addBookToCart(this.book);
+       this.bookService.addBookToCart(this.book);
     }
 
     onAddToForm() {

@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Book} from '../shared/book.model';
 import {BookService} from './book.service';
 import {DataShopService} from '../shared/data-shop.service';
 import {Subscription} from 'rxjs';
+import {MatPaginator} from '@angular/material/paginator';
 
 
 @Component({
@@ -13,6 +14,8 @@ import {Subscription} from 'rxjs';
 export class BooklistComponent implements OnInit {
     books: Book[];
     subscription: Subscription;
+    searchBooks: Book[];
+    search = '';
 
     constructor(private bookService: BookService,
                 private dataShopService: DataShopService) {
@@ -27,6 +30,10 @@ export class BooklistComponent implements OnInit {
                 }
             );
         this.dataShopService.fetchBooks();
+    }
+
+    onSearch() {
+        this.bookService.filterBySearch(this.search);
     }
 
 }

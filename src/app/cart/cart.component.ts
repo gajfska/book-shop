@@ -9,10 +9,10 @@ import {NgForm} from '@angular/forms';
     templateUrl: './cart.component.html',
     styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit, OnDestroy {
-    // @Input() index: number;
+export class CartComponent implements OnInit {
     books: Book[];
     book: Book;
+    sum: number;
     private subscription: Subscription;
 
     constructor(private cartService: CartService) {
@@ -20,29 +20,27 @@ export class CartComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.books = this.cartService.getBooks();
+        this.whatIsTheCost();
     }
 
     upQuantity(index: number) {
         if (this.books[index].quantity < this.books[index].amount) {
             this.books[index].quantity++;
         }
-        // console.log(this.books[index].quantity);
     }
 
     downQuantity(index: number) {
-        if (this.books[index].quantity !== 0) {
+        if (this.books[index].quantity !== 1) {
             this.books[index].quantity--;
         }
     }
 
-    onDelete(index: number) {
-        this.cartService.deleteBook(index);
+    whatIsTheCost() {
+
     }
 
-    onSubmit(form: NgForm) {}
-
-    ngOnDestroy() {
-        // this.subscription.unsubscribe();
+    onDelete(index: number) {
+        this.cartService.deleteBook(index);
     }
 
 }

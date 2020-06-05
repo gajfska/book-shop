@@ -8,14 +8,14 @@ import {FormService} from '../form/form.service';
 @Injectable({providedIn: 'root'})
 export class BookService {
     booksChanged = new Subject<Book[]>();
-    //private books: Book[] = [];
+    private books: Book[] = [];
 
     constructor( private cartService: CartService,
                  private formService: FormService) {}
 
 
    setBooks(books: Book[]) {
-       //this.books = books;
+       this.books = books;
        this.booksChanged.next(books.slice());
    }
 
@@ -25,5 +25,11 @@ export class BookService {
 
     addBookToForm(book: Book) {
         this.cartService.addBook(book);
+    }
+
+    filterBySearch(searchParameter: string) {
+        const filteredBooks  = this.books.filter( book =>
+            book.author.includes(searchParameter) || book.name.includes(searchParameter));
+        this.booksChanged.next(filteredBooks.slice());
     }
 }

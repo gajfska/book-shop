@@ -16,6 +16,7 @@ import {CartService} from './cart/cart.service';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {MatBadgeModule} from '@angular/material/badge';
       HttpClientModule,
       MatButtonModule,
       MatIconModule,
-      MatBadgeModule
+      MatBadgeModule,
+      MatPaginatorModule
   ],
   providers: [BookService, CartService],
   bootstrap: [AppComponent]
