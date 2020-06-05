@@ -20,7 +20,6 @@ export class CartComponent implements OnInit {
 
     ngOnInit() {
         this.books = this.cartService.getBooks();
-        this.whatIsTheCost();
     }
 
     upQuantity(index: number) {
@@ -36,7 +35,7 @@ export class CartComponent implements OnInit {
     }
 
     whatIsTheCost() {
-
+        this.sum = this.cartService.count();
     }
 
     onDelete(index: number) {

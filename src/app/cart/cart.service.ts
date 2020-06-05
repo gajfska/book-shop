@@ -24,4 +24,13 @@ export class CartService {
         // this.booksChanged.next(this.books.slice());
     }
 
+    count() {
+        const quantity = this.books.map(book => book.quantity);
+        const price = this.books.map(book => book.price);
+        let multiplication = 0;
+        for (let i = 0; i < quantity.length; i++) {
+            multiplication += quantity[i] * price[i];
+        }
+        return multiplication;
+    }
 }
