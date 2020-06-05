@@ -55,7 +55,7 @@
             </div>
 
             <div class="list-group col-md-12">
-                <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books">
+                <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books; let i = index">
                     <div class="col-md-4">
                         <div class="pull-left">
                             <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 50px; margin-right: 10px">
@@ -68,7 +68,12 @@
                         <a>{{book.quantity}}</a>
                     </div>
                     <div class="col-md-4">
-                        {{book.price}}
+                        <div class="pull-right">
+                            <button (click)="onDelete(i)">x</button>
+                        </div>
+                        <div class="pull-left">
+                            {{book.price}}
+                        </div>
                     </div>
                 </div>
             </div>

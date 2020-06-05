@@ -37,6 +37,10 @@ export class FormComponent  implements OnInit {
         this.adres.street = this.singForm.value.userAdres.street;
     }
 
+    onDelete(index: number) {
+        this.cartService.deleteBook(index);
+    }
+
     ngOnInit() {
         // this.books = this.formService.getBooks();
         this.books = this.cartService.getBooks();
