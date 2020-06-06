@@ -16,12 +16,12 @@ import {CartService} from './cart/cart.service';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import {OrderSummaryComponent} from './form/order-summary/order-summary.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, BooklistComponent, CartComponent, FormComponent, BookItemComponent
+    AppComponent, HeaderComponent, BooklistComponent, CartComponent, FormComponent, BookItemComponent, OrderSummaryComponent
   ],
   imports: [
     BrowserModule,
@@ -31,8 +31,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
       HttpClientModule,
       MatButtonModule,
       MatIconModule,
-      MatBadgeModule,
-      MatPaginatorModule
+      MatBadgeModule
   ],
   providers: [BookService, CartService],
   bootstrap: [AppComponent]

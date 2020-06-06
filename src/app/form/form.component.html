@@ -13,7 +13,7 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">Numer kontaktowy</label>
-                            <input type="text" id="phone" class="form-control" ngModel name="phone" required>
+                            <input type="text" id="phone" class="form-control" ngModel name="phone" required inputmode="numeric" pattern="[0-9]*">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
@@ -34,7 +34,7 @@
                             <label for="city">Miasto</label>
                             <input type="text" id="city" class="form-control" ngModel name="city" required>
                             <label for="zip-code">Kod pocztowy</label>
-                            <input type="text" id="zip-code" class="form-control" ngModel name="zip-code" required>
+                            <input type="text" id="zip-code" class="form-control" ngModel name="zip-code" required inputmode="numeric" pattern="[0-9]*">
                         </div>
                     </div>
             </div>
@@ -80,7 +80,7 @@
 
             <br>
             <div>
-                <button class="btn btn-primary" type="submit" [disabled]="!f.valid"> Dalej </button>
+                <button class="btn btn-primary" type="submit" [disabled]="!f.valid" routerLink="/summary"> Dalej </button>
             </div>
 
         </form>
