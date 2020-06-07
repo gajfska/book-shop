@@ -15,8 +15,17 @@ export class CartService {
     }
 
     addBook(book: Book) {
-        this.books.push(book);
-        // this.booksChanged.next(this.books);
+        if (this.books.includes(book)){
+            if (book.quantity === book.amount) {
+                console.log('stop');
+            }
+            else {
+                book.quantity++;
+            }
+        }
+        else {
+            this.books.push(book);
+        }
     }
 
     deleteBook(index: number) {
@@ -31,6 +40,6 @@ export class CartService {
         for (let i = 0; i < quantity.length; i++) {
             multiplication += quantity[i] * price[i];
         }
-        return multiplication;
+        return Math.round(multiplication * 100) / 100;
     }
 }

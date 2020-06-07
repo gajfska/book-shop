@@ -10,6 +10,7 @@ import {BookService} from '../book.service';
 export class BookItemComponent {
    @Input() book: Book;
 
+
    constructor( private bookService: BookService) {}
 
     onAddToCart() {
