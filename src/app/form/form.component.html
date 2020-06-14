@@ -80,7 +80,7 @@
 
             <br>
             <div>
-                <button class="btn btn-primary" type="submit" [disabled]="!f.valid" routerLink="/summary"> Dalej </button>
+                <button class="btn btn-primary" type="submit" [disabled]="!f.valid" (click)="onSubmit()" routerLink="/order"> Dalej </button>
             </div>
 
         </form>
@@ -89,7 +89,9 @@
         Suma: {{sum}}
     </div>
     <div class="row" *ngIf="submitted">
-        <p>User name: {{user.name}}</p>
-        <p>User name: {{adres.street}}</p>
+        <p>Imię: {{user.name}}</p>
+        <p>Nazwisko: {{user.surname}}</p>
+        <p>Telefon: {{user.phone}}</p>
+        <p>Mail: {{user.email}}</p>
     </div>
 </div>

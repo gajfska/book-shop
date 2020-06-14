@@ -10,7 +10,7 @@ const appRoutes: Routes = [
     { path: 'shoppinglist', component: BooklistComponent},
     { path: 'cart', component: CartComponent},
     { path: 'form', component: FormComponent},
-    { path: 'summary', component: OrderSummaryComponent}
+    { path: 'order', component: OrderSummaryComponent}
 ];
 
 @NgModule({

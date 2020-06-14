@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, DoCheck, Input, OnDestroy, OnInit} from '@angular/core';
 import {Book} from '../shared/book.model';
 import {Subscription} from 'rxjs';
 import {CartService} from './cart.service';
@@ -9,7 +9,7 @@ import {NgForm} from '@angular/forms';
     templateUrl: './cart.component.html',
     styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, DoCheck {
     books: Book[];
     book: Book;
     sum: number;
@@ -34,7 +34,11 @@ export class CartComponent implements OnInit {
         }
     }
 
-    whatIsTheCost() {
+    // whatIsTheCost() {
+    //     this.sum = this.cartService.count();
+    // }
+
+    ngDoCheck() {
         this.sum = this.cartService.count();
     }
 

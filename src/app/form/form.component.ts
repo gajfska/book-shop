@@ -1,8 +1,11 @@
-import {Component, DoCheck, OnInit, ViewChild} from '@angular/core';
+import {Component, DoCheck, Input, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Book} from '../shared/book.model';
 import {CartService} from '../cart/cart.service';
 import {FormService} from './form.service';
+import {Addres, User} from './form.model';
+
+
 
 @Component({
     selector: 'app-form',
@@ -18,12 +21,12 @@ export class FormComponent  implements OnInit, DoCheck {
         phone: '',
         email: ''
     };
-    adres = {
-        street: '',
-        buildNumber: '',
-        city: '',
-        zipCode: ''
-    };
+    // adres = {
+    //     street: '',
+    //     buildNumber: '',
+    //     city: '',
+    //     zipCode: ''
+    // };
     submitted = false;
 
     books: Book[];
@@ -34,15 +37,32 @@ export class FormComponent  implements OnInit, DoCheck {
                 private cartService: CartService) {}
 
     onSubmit() {
+
+        const user = new User(
+            this.singForm.value.userInfo.name,
+            this.singForm.value.userInfo.surname,
+            this.singForm.value.userInfo.phone,
+            this.singForm.value.userInfo.email);
+        // console.log(this.singForm.value.userInfo.name);
+        //
+        // console.log(user);
+
+        this.formService.setUser(user);
         this.submitted = true;
-        this.user.name = this.singForm.value.userInfo.name;
-        this.user.surname = this.singForm.value.userInfo.surname;
-        this.user.phone = this.singForm.value.userInfo.phone;
-        this.user.email = this.singForm.value.userInfo.email;
-        this.adres.street = this.singForm.value.userAdres.street;
-        this.adres.buildNumber = this.singForm.value.userAdres.buildNumber;
-        this.adres.city = this.singForm.value.userAdres.city;
-        this.adres.zipCode = this.singForm.value.userAdres.zipCode;
+
+        // this.user.name = this.singForm.value.userInfo.name;
+        // this.user.surname = this.singForm.value.userInfo.surname;
+        // this.user.phone = this.singForm.value.userInfo.phone;
+        // this.user.email = this.singForm.value.userInfo.email;
+
+        // this.formService.user.name = this.singForm.value.userInfo.name;
+        // this.formService.user.surname = this.singForm.value.userInfo.surname;
+        // this.formService.user.phone = this.singForm.value.userInfo.phone;
+        // this.formService.user.email = this.singForm.value.userInfo.email;
+        // this.formService.addres.street = this.singForm.value.userAdres.street;
+        // this.formService.addres.buildNumber = this.singForm.value.userAdres.buildNumber;
+        // this.formService.addres.city = this.singForm.value.userAdres.city;
+        // this.formService.addres.zipCode = this.singForm.value.userAdres.zipCode;
     }
 
     onDelete(index: number) {
@@ -52,6 +72,7 @@ export class FormComponent  implements OnInit, DoCheck {
     ngOnInit() {
         // this.books = this.formService.getBooks();
         this.books = this.cartService.getBooks();
+        //this.singForm.value.userInfo.name = this.formService.user.name;
     }
 
     ngDoCheck() {
