@@ -15,24 +15,7 @@ import {Addres, User} from './form.model';
 
 export class FormComponent  implements OnInit, DoCheck {
     @ViewChild('f' , {static: false}) singForm: NgForm;
-    user = {
-        name: '',
-        surname: '',
-        phone: '',
-        email: ''
-    };
-
-    // addres = {
-    //     street: ''
-    // };
-    // adres = {
-    //     street: '',
-    //     buildNumber: '',
-    //     city: '',
-    //     zipCode: ''
-    // };
     submitted = false;
-
     books: Book[];
     sum: number;
 
@@ -53,26 +36,9 @@ export class FormComponent  implements OnInit, DoCheck {
             this.singForm.value.userAdres.buildNumber,
             this.singForm.value.userAdres.city,
             this.singForm.value.userAdres.zipCode);
-        // console.log(this.singForm.value.userInfo.name);
-        //
-        // console.log(user);
 
         this.formService.setUser(user, addres);
         this.submitted = true;
-
-        // this.user.name = this.singForm.value.userInfo.name;
-        // this.user.surname = this.singForm.value.userInfo.surname;
-        // this.user.phone = this.singForm.value.userInfo.phone;
-        // this.user.email = this.singForm.value.userInfo.email;
-
-        // this.formService.user.name = this.singForm.value.userInfo.name;
-        // this.formService.user.surname = this.singForm.value.userInfo.surname;
-        // this.formService.user.phone = this.singForm.value.userInfo.phone;
-        // this.formService.user.email = this.singForm.value.userInfo.email;
-        // this.formService.addres.street = this.singForm.value.userAdres.street;
-        // this.formService.addres.buildNumber = this.singForm.value.userAdres.buildNumber;
-        // this.formService.addres.city = this.singForm.value.userAdres.city;
-        // this.formService.addres.zipCode = this.singForm.value.userAdres.zipCode;
     }
 
     onDelete(index: number) {
@@ -80,9 +46,7 @@ export class FormComponent  implements OnInit, DoCheck {
     }
 
     ngOnInit() {
-        // this.books = this.formService.getBooks();
         this.books = this.cartService.getBooks();
-        //this.singForm.value.userInfo.name = this.formService.user.name;
     }
 
     ngDoCheck() {

@@ -1,7 +1,6 @@
-import {Component, DoCheck, OnInit} from '@angular/core';
+import {Component, DoCheck} from '@angular/core';
 import {CartService} from '../cart/cart.service';
 import {Book} from '../shared/book.model';
-import {BookService} from '../booklist/book.service';
 
 @Component({
     selector: 'app-header',
@@ -15,8 +14,7 @@ export class HeaderComponent implements DoCheck {
     books: Book[];
     book: Book;
 
-    constructor(private cartService: CartService,
-                private bookService: BookService) {}
+    constructor(private cartService: CartService) {}
 
     ngDoCheck() {
         this.books = this.cartService.getBooks();

@@ -1,8 +1,6 @@
-import {Component, DoCheck, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
 import {Book} from '../shared/book.model';
-import {Subscription} from 'rxjs';
 import {CartService} from './cart.service';
-import {NgForm} from '@angular/forms';
 
 @Component({
     selector: 'app-cart',
@@ -13,7 +11,6 @@ export class CartComponent implements OnInit, DoCheck {
     books: Book[];
     book: Book;
     sum: number;
-    private subscription: Subscription;
 
     constructor(private cartService: CartService) {
     }
@@ -33,10 +30,6 @@ export class CartComponent implements OnInit, DoCheck {
             this.books[index].quantity--;
         }
     }
-
-    // whatIsTheCost() {
-    //     this.sum = this.cartService.count();
-    // }
 
     ngDoCheck() {
         this.sum = this.cartService.count();
