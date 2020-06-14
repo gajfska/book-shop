@@ -21,6 +21,10 @@ export class FormComponent  implements OnInit, DoCheck {
         phone: '',
         email: ''
     };
+
+    // addres = {
+    //     street: ''
+    // };
     // adres = {
     //     street: '',
     //     buildNumber: '',
@@ -43,11 +47,17 @@ export class FormComponent  implements OnInit, DoCheck {
             this.singForm.value.userInfo.surname,
             this.singForm.value.userInfo.phone,
             this.singForm.value.userInfo.email);
+
+        const addres = new Addres(
+            this.singForm.value.userAdres.street,
+            this.singForm.value.userAdres.buildNumber,
+            this.singForm.value.userAdres.city,
+            this.singForm.value.userAdres.zipCode);
         // console.log(this.singForm.value.userInfo.name);
         //
         // console.log(user);
 
-        this.formService.setUser(user);
+        this.formService.setUser(user, addres);
         this.submitted = true;
 
         // this.user.name = this.singForm.value.userInfo.name;

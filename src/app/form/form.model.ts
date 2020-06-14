@@ -17,4 +17,11 @@ export class Addres {
     buildNumber: number;
     city: string;
     zipCode: number;
+
+    constructor(street: string, buildNumber: number, city: string, zipCode: number) {
+        this.street = street;
+        this.buildNumber = buildNumber;
+        this.city = city;
+        this.zipCode = zipCode;
+    }
 }

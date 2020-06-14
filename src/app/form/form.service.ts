@@ -11,10 +11,9 @@ export class FormService {
     addres: Addres;
     booksChanged = new Subject<Book[]>();
 
-    setUser(user: User) {
-        console.log('service')
-        console.log(user);
+    setUser(user: User, addres: Addres) {
         this.user = user;
+        this.addres = addres;
     }
 
     getBook() {
