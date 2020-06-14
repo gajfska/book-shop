@@ -1,10 +1,48 @@
-<h3>Hello order summary</h3>
-<p>{{user.name}}</p>
-<p>{{user.surname}}</p>
-<p>{{user.phone}}</p>
-<p>{{user.email}}</p>
+<h2>Podsumowanie zamówienia</h2>
+    <h3>Dane osobowe</h3>
+        <p>Imię: {{user.name}}</p>
+        <p>Nazwisko: {{user.surname}}</p>
+        <p>Telefon: {{user.phone}}</p>
+        <p>Mail: {{user.email}}</p>
 <br>
-<p>{{addres.street}}</p>
-<p>{{addres.buildNumber}}</p>
-<p>{{addres.city}}</p>
-<p>{{addres.zipCode}}</p>
+
+<h3>Dane adresowe</h3>
+    <p>ul. {{addres.street}} {{addres.buildNumber}}</p>
+    <p>{{addres.zipCode}} {{addres.city}}</p>
+
+<h3>Dane zamówienia</h3>
+
+<div class="list-group col-sm-12">
+    <div class="list-group-item" style="padding-bottom: 50px">
+        <div class="col-md-4">
+            <h4>Produkt</h4>
+        </div>
+        <div class="col-md-4">
+            <h4>Ilość</h4>
+        </div>
+        <div class="col-md-4">
+            <h4>Cena</h4>
+        </div>
+    </div>
+</div>
+
+<div class="list-group col-md-12">
+    <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books; let i = index">
+        <div class="col-md-4">
+            <div class="pull-left">
+                <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 50px; margin-right: 10px">
+            </div>
+            <a>{{book.name}}</a>
+            <br>
+            <a>{{book.author}}</a>
+        </div>
+        <div class="col-md-4">
+            <a>{{book.quantity}}</a>
+        </div>
+        <div class="col-md-4">
+                {{book.price}}
+        </div>
+    </div>
+</div>
+
+<h4>Do zapłaty: {{sum}}</h4>
