@@ -1,17 +1,21 @@
-<a class="list-group-item clearfix">
+<a class="list-group-item clearfix book-item-inside">
     <h4 class="list-group-item-heading"> {{book.name}} </h4>
     <p class="list-group-item-text"> {{book.author}} </p>
     <div class="pull-left">
-        <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 200px">
+        <img src="{{book.image}}" alt="" class="img-responsive book-image">
     </div>
     <div class="pull-right">
-        <p>Liczba stron:</p>
-        <p>{{book.pages}}</p>
-        <p>Cena:</p>
-        <p>{{book.price}}</p>
-        <button class="btn btn-primary" (click)="onAddToCart()"> Dodaj do koszyka <mat-icon>shopping_cart</mat-icon> </button>
+        <p class="description">Liczba stron:</p>
+        <p class="description-real">{{book.pages}}</p>
+        <p class="description">Cena:</p>
+        <p class="description-real">{{book.price}} zł</p>
+        <button mat-raised-button (click)="onAddToCart()" class="btn-dark-green">
+            Dodaj do koszyka <mat-icon>shopping_cart</mat-icon>
+        </button>
         <br>
         <br>
-        <button class="btn btn-primary" (click)="onAddToForm()" routerLink="/form"> Zamów <mat-icon>point_of_sale</mat-icon></button>
+        <button mat-raised-button  (click)="onAddToForm()" routerLink="/form" class="btn-dark-green">
+            Zamów <mat-icon>point_of_sale</mat-icon>
+        </button>
     </div>
 </a>

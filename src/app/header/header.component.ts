@@ -23,6 +23,8 @@ export class HeaderComponent implements DoCheck {
     ngDoCheck() {
         this.books = this.cartService.getBooks();
         this.badgeCounter = this.books.map(book => book.quantity).reduce(this.add, 0);
+        this.bookService.filterBySearch(this.search);
+
     }
 
     add(accumulator, a) {
@@ -33,12 +35,8 @@ export class HeaderComponent implements DoCheck {
         this.show = !this.show;
     }
 
-    onSearch() {
-        this.bookService.filterBySearch(this.search);
-    }
-
     onClean(){
         this.search = '';
-        this.onSearch();
+        this.bookService.filterBySearch(this.search);
     }
 }

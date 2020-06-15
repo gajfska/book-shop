@@ -1,0 +1,40 @@
+.book-item-inside {
+    border: solid 2px #284b63;
+    border-radius: 0;
+}
+
+a.list-group-item .list-group-item-heading {
+    color: #284b63;
+    font-size: 25px;
+    padding: 5px 0;
+}
+
+.list-group-item-text {
+    color: #353535;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.book-image {
+    height: 205px;
+    width: 130px
+}
+
+.description {
+    color: #353535;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.description-real {
+    color: #353535;
+    font-size: 15px;
+}
+
+.btn-dark-green {
+    background-color: #284b63;
+    border-radius: 0;
+    text-transform: uppercase;
+    padding: 3px 9px;
+}
