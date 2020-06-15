@@ -1,0 +1,7 @@
+.search {
+    display: block;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background: #fff;
+}

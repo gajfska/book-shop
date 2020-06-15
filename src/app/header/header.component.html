@@ -1,6 +1,6 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default ">
     <div class="container-fluid">
-        <div class="havabr-header">
+        <div class="navabr-header">
             <a href="#" class="navbar-brand"> Book shop </a>
         </div>
 
@@ -11,6 +11,12 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <button mat-icon-button color="black"
+                        (click)="showSearch()"
+                        style="margin-top: 15px">
+                    <mat-icon>search</mat-icon>
+                </button>
+
+                <button mat-icon-button color="black"
                         [matBadge]="badgeCounter"
                         matBadgeColor="warn"
                         routerLink="/cart"
@@ -19,5 +25,12 @@
                 </button>
             </ul>
         </div>
+    </div>
+
+    <div *ngIf="show">
+        <p>Search</p>
+        <input type="text" [(ngModel)]="search" style="margin: 5px">
+        <button (click)="onSearch()" class="btn btn-primary"> Szukaj </button>
+        <button (click)="onClean()">x</button>
     </div>
 </nav>

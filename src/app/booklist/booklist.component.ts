@@ -13,7 +13,7 @@ import {Subscription} from 'rxjs';
 export class BooklistComponent implements OnInit {
     books: Book[];
     subscription: Subscription;
-    search = '';
+
 
     constructor(private bookService: BookService,
                 private dataShopService: DataShopService) {
@@ -28,9 +28,4 @@ export class BooklistComponent implements OnInit {
             );
         this.dataShopService.fetchBooks();
     }
-
-    onSearch() {
-        this.bookService.filterBySearch(this.search);
-    }
-
 }
