@@ -1,7 +1,126 @@
-.search {
-    display: block;
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    background: #fff;
+.navbar {
+    transition: all .5s ease-in-out;
 }
+
+.navbar-custom{
+    background-color: #3c6e71;
+    border-radius: 0;
+    border-bottom: solid 2px #284b63;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 30px 10px 10px 5px;
+}
+
+.navbar-right {
+    margin-right: 30px;
+}
+
+.navbar-nav > li {
+    padding: 20px 10px 10px 5px;
+}
+
+.mat-icon {
+    color: white;
+    font-size: 35px;
+}
+
+.mat-badge-content {
+    width: auto;
+    display: grid;
+    min-width: 32px;
+    min-height: 28px;
+    text-align: center;
+    align-items: center;
+    padding: 5px 3px;
+    top: -20px;
+    right: -22px;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    margin-left: 50px;
+    width: 600px
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #ffffff;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 18px;
+    cursor: text;
+    text-transform: uppercase;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #c2185b, #ffc6dc);
+    border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #C2185B;
+    font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+
+.btn-clean {
+    background-color: #284b63;
+    padding: 10px 10px;
+    border-radius: 0;
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+
+.btn-clean p {
+    color: white;
+    font-size: 25px;
+    margin: 0;
+}
+
+/*.search {*/
+    /*display: block;*/
+    /*position: absolute;*/
+    /*top: 100%;*/
+    /*width: 100%;*/
+    /*background: #fff;*/
+/*}*/

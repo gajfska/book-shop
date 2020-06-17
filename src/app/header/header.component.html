@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default ">
+<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-custom">
     <div class="container-fluid">
         <div class="navabr-header">
             <a href="#" class="navbar-brand"> Book shop </a>
@@ -10,26 +10,33 @@
                 <li routerLinkActive="active"><a routerLink="/form"> Form </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <button mat-icon-button color="black"
-                        (click)="showSearch()"
-                        style="margin-top: 15px">
-                    <mat-icon>search</mat-icon>
-                </button>
-
-                <button mat-icon-button color="black"
-                        [matBadge]="badgeCounter"
-                        matBadgeColor="warn"
-                        routerLink="/cart"
-                        style="margin-top: 15px">
-                    <mat-icon>shopping_cart</mat-icon>
-                </button>
+                <li>
+                    <button mat-icon-button
+                            class="header-icon"
+                            (click)="showSearch()">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-icon-button
+                            [matBadge]="badgeCounter"
+                            routerLink="/cart">
+                        <mat-icon>shopping_cart</mat-icon>
+                    </button>
+                </li>
             </ul>
         </div>
     </div>
 
-    <div *ngIf="show">
-        <p>Search</p>
-        <input type="text" [(ngModel)]="search" style="margin: 5px">
-        <button (click)="onClean()">x</button>
+    <div *ngIf="show" class="search">
+        <div class="pull-left">
+            <div class="form__group field">
+                <input type="input" class="form__field" [(ngModel)]="search" placeholder="Name" name="name" id='name' required />
+                <label for="name" class="form__label">Szukaj</label>
+            </div>
+        </div>
+        <div class="pull-right">
+            <button mat-raised-button  class="btn-clean" (click)="onClean()"><p>x</p></button>
+        </div>
     </div>
 </nav>
