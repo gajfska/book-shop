@@ -45,8 +45,8 @@
 .form__group {
     position: relative;
     padding: 15px 0 0;
-    margin-top: 10px;
     margin-left: 50px;
+    margin-bottom: 15px;
     width: 600px
 }
 
@@ -85,7 +85,7 @@
     padding-bottom: 6px;
     font-weight: 700;
     border-width: 3px;
-    border-image: linear-gradient(to right, #c2185b, #ffc6dc);
+    border-image: linear-gradient(to right, #ffc6dc, #c2185b);
     border-image-slice: 1;
 }
 .form__field:focus ~ .form__label {
@@ -93,8 +93,9 @@
     top: 0;
     display: block;
     transition: 0.2s;
-    font-size: 1rem;
-    color: #C2185B;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: #ffc6dc;
     font-weight: 700;
 }
 
@@ -105,9 +106,7 @@
 
 .btn-clean {
     background-color: #284b63;
-    padding: 10px 10px;
     border-radius: 0;
-    margin-bottom: 20px;
     margin-right: 50px;
 }
 
