@@ -1,0 +1,96 @@
+.cart {
+    padding-top: 100px;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #6c757d;
+}
+
+.basic-describe {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.img-icon {
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+.name-book {
+    font-size: 16px;
+    color: #353535;
+    margin-bottom: 0;
+}
+
+.author-book {
+    font-size: 14px;
+    color: #353535;
+}
+
+.amount-book {
+    font-size: 16px;
+    color: #353535;
+    margin-top: 15px;
+}
+
+.choose-quantity {
+    padding-top: 13px;
+}
+
+.choose-quantity ul {
+    padding: 0;
+    margin: 0;
+}
+
+.choose-quantity ul li {
+    display: inline-block;
+}
+
+.btn-little {
+    background-color: #284b63;
+    border-radius: 0;
+    padding: 0;
+    margin: 0px;
+}
+
+.btn-little p {
+    color: white;
+    font-size: 15px;
+    margin-bottom: 0;
+    width: 36px;
+}
+
+.quantity-book {
+    font-size: 16px;
+    color: #353535;
+    margin: 0px 5px;
+}
+
+.price-book {
+    font-size: 16px;
+    color: #353535;
+    margin-top: 10px;
+}
+
+.price-decs {
+    padding-top: 13px;
+}
+
+.summary-styling ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.summary-styling p {
+    font-size: 20px;
+    color: #353535;
+    text-transform: uppercase;
+}
+
+.btn-main-cart {
+    background-color: #284b63;
+    border-radius: 0;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px 20px 6px 20px;
+}

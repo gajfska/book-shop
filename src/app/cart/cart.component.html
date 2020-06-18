@@ -1,59 +1,65 @@
-<div class="container">
+<div class="container cart">
     <div class="row">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col" class="basic-describe">Produkt</th>
+                <th scope="col" class="basic-describe">Ilość w magazynie</th>
+                <th scope="col" class="basic-describe">Ilość</th>
+                <th scope="col" class="basic-describe">Cena</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of books; let i = index">
+                    <th scope="row">
+                        <div class="pull-left">
+                            <img src="{{book.image}}" alt="" class="img-responsive img-icon">
+                        </div>
+                        <p class="name-book">{{book.name}}</p>
+                        <p class="author-book">{{book.author}}</p>
+                    </th>
+
+                    <td> <p class="amount-book">{{book.amount}}</p> </td>
+                    <td class="choose-quantity">
+                        <ul>
+                            <li><button mat-mini-fab class="decrease btn-little" (click)="downQuantity(i)"><p>-</p></button>
+                            </li>
+                            <li><p class="quantity-book">{{book.quantity}}</p>
+                            </li>
+                            <li><button mat-mini-fab class="increase btn-little" (click)="upQuantity(i)"><p>+</p></button>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="price-decs">
+                        <div class="pull-right">
+                            <button mat-mini-fab class="btn-little" (click)="onDelete(i)"><p>x</p></button>
+                        </div>
+                        <div class="pull-left">
+                           <p class="price-book">{{book.price}}</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <hr>
-        <div class="list-group">
-            <div class="list-group-item" style="padding-bottom: 50px">
-                <div class="col-md-3">
-                    <h4>Produkt</h4>
-                </div>
-                <div class="col-md-3">
-                    <h4>Ilość w magazynie</h4>
-                </div>
-                <div class="col-md-3">
-                    <h4>Ilość</h4>
-                </div>
-                <div class="col-md-3">
-                    <h4>Cena</h4>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <br>
-        <div class="list-group">
-            <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books; let i = index"  >
-                <div class="col-md-3">
-                    <div class="pull-left">
-                        <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 50px; margin-right: 10px">
-                    </div>
-                    <a>{{book.name}}</a>
-                    <br>
-                    <a>{{book.author}}</a>
-                </div>
-                <div class="col-md-3">
-                    {{book.amount}}
-                </div>
-                <div class="col-md-3">
-                    <button class="decrease" (click)="downQuantity(i)">-</button>
-                    <a style="margin: 5px">{{book.quantity}}</a>
-                    <button class="increase" (click)="upQuantity(i)">+</button>
-                </div>
-                <div class="col-md-3">
-                    <div class="pull-right">
-                        <button (click)="onDelete(i)">x</button>
-                    </div>
-                    <div class="pull-left">
-                        {{book.price}}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <p>Suma:</p>
-            <a>{{sum}}</a>
-        </div>
         <div class="row">
-            <button class="btn btn-primary" type="submit" routerLink="/form"> Dalej </button>
+            <div class="pull-right summary-styling">
+                <ul>
+                    <li><p>Suma:</p></li>
+                    <li><p>{{sum}} zł</p></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="pull-left">
+                <button mat-raised-button  class="btn-main-cart" routerLink="/shoppinglist">Wróć do sklepu</button>
+            </div>
+            <div class="pull-right">
+                <button mat-raised-button class="btn-main-cart" routerLink="/form">Dalej</button>
+            </div>
         </div>
     </div>
 </div>
