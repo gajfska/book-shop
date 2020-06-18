@@ -1,94 +1,115 @@
-<div class="container">
+<div class="container form-component">
     <div class="row">
         <form (ngSubmit)="onSubmit()" #f="ngForm">
             <div class="col-lg-6">
                <h2>Dane kontaktowe</h2>
 
                     <div id="user-info" ngModelGroup="userInfo" #userInfo="ngModelGroup">
-                        <div class="form-group">
-                            <label for="name">Imię</label>
-                            <input type="text" id="name" class="form-control" ngModel name="name" required>
-                            <label for="surname">Nazwisko</label>
-                            <input type="text" id="surname" class="form-control" ngModel name="surname" required>
+
+                        <div class="form__group field">
+                            <input type="text" class="form__field" ngModel placeholder="Name" name="name" id="name" required />
+                            <label for="name" class="form__label">Imię</label>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Numer kontaktowy</label>
-                            <input type="text" id="phone" class="form-control" ngModel name="phone" required inputmode="numeric" pattern="[0-9]*">
+
+                        <div class="form__group field">
+                            <input type="text" class="form__field" ngModel placeholder="Surname" name="surname" id="surname" required />
+                            <label for="surname" class="form__label">Nazwisko</label>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" id="email" class="form-control" ngModel name="email" required email #email="ngModel">
+
+                        <div class="form__group field">
+                            <input type="text"
+                                   class="form__field"
+                                   ngModel
+                                   placeholder="Phone"
+                                   name="phone"
+                                   id="phone"
+                                   required
+                                   inputmode="numeric"
+                                   pattern="[0-9]*"/>
+                            <label for="phone" class="form__label">Numer kontaktowy</label>
+                        </div>
+
+                        <div class="form__group field">
+                            <input type="text" class="form__field" ngModel placeholder="Email" name="email" id="email" required email #email="ngModel" />
+                            <label for="email" class="form__label">Email</label>
                             <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
                         </div>
                     </div>
-                <p *ngIf="!userInfo.valid && userInfo.touched">User data is invalid!</p>
             </div>
             <div class="col-lg-6">
                 <h2>Adres</h2>
                     <div id="user-adres" ngModelGroup="userAdres" #userAdres="ngModelGroup">
-                        <div class="form-group">
-                            <label for="street">Ulica</label>
-                            <input type="text" id="street" class="form-control" ngModel name="street" required>
-                            <label for="buildNumber">Numer budynku</label>
-                            <input type="text" id="buildNumber" class="form-control" ngModel name="buildNumber" required>
-                            <label for="city">Miasto</label>
-                            <input type="text" id="city" class="form-control" ngModel name="city" required>
-                            <label for="zipCode">Kod pocztowy</label>
-                            <input type="text" id="zipCode" class="form-control" ngModel name="zipCode" required inputmode="numeric" pattern="[0-9]*">
+                        <div class="form__group field">
+                            <input type="text" class="form__field" ngModel placeholder="Street" name="street" id="street" required />
+                            <label for="street" class="form__label">Ulica</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="text" class="form__field" ngModel placeholder="BuildNumber" name="buildNumber" id="buildNumber" required />
+                            <label for="buildNumber" class="form__label">Numer budynku</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="text" class="form__field" ngModel placeholder="City" name="city" id="city" required />
+                            <label for="city" class="form__label">Miasto</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="text" class="form__field" ngModel placeholder="ZipCode" name="zipCode" id="zipCode" required />
+                            <label for="zipCode" class="form__label">Kod pocztowy</label>
                         </div>
                     </div>
+                <p class="invalid-data" *ngIf="!userInfo.valid && userInfo.touched || !userAdres.valid && userAdres.touched">Dane są niepoprawne!</p>
             </div>
             <br>
 
-            <div class="list-group col-sm-12">
-                <div class="list-group-item" style="padding-bottom: 50px">
-                    <div class="col-md-4">
-                        <h4>Produkt</h4>
-                    </div>
-                    <div class="col-md-4">
-                        <h4>Ilość</h4>
-                    </div>
-                    <div class="col-md-4">
-                        <h4>Cena</h4>
-                    </div>
-                </div>
-            </div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col" class="basic-describe">Produkt</th>
+                    <th scope="col" class="basic-describe">Ilość</th>
+                    <th scope="col" class="basic-describe">Cena</th>
+                </tr>
+                </thead>
 
-            <div class="list-group col-md-12">
-                <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books; let i = index">
-                    <div class="col-md-4">
+                <tbody>
+                <tr *ngFor="let book of books; let i = index">
+                    <th scope="row">
                         <div class="pull-left">
-                            <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 50px; margin-right: 10px">
+                            <img src="{{book.image}}" alt="" class="img-responsive img-icon">
                         </div>
-                        <a>{{book.name}}</a>
-                        <br>
-                        <a>{{book.author}}</a>
-                    </div>
-                    <div class="col-md-4">
-                        <a>{{book.quantity}}</a>
-                    </div>
-                    <div class="col-md-4">
+                        <p class="name-book">{{book.name}}</p>
+                        <p class="author-book">{{book.author}}</p>
+                    </th>
+
+                    <td class="choose-quantity">
+                        <p class="quantity-book">{{book.quantity}}</p>
+                    </td>
+
+                    <td class="price-decs">
                         <div class="pull-right">
-                            <button (click)="onDelete(i)">x</button>
+                            <button mat-mini-fab class="btn-little" (click)="onDelete(i)"><p>x</p></button>
                         </div>
                         <div class="pull-left">
-                            {{book.price}}
+                            <p class="price-book">{{book.price}}</p>
                         </div>
-                    </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="pull-right summary-styling">
+                    <ul>
+                        <li><p>Suma:</p></li>
+                        <li><p>{{sum}} zł</p></li>
+                    </ul>
                 </div>
             </div>
-
-            <br>
-            <div>
-                <button class="btn btn-primary" type="submit" [disabled]="!f.valid" (click)="onSubmit()" routerLink="/order"> Dalej </button>
+            <div class="pull-right">
+                <button mat-raised-button
+                        class="btn-main-cart"
+                        type="submit"
+                        [disabled]="!f.valid"
+                        (click)="onSubmit()"
+                        routerLink="/order"> Podsumowanie </button>
             </div>
-
         </form>
-    </div>
-    <div>
-        Suma: {{sum}}
-
-    </div>
-    <div class="row" *ngIf="submitted">
     </div>
 </div>

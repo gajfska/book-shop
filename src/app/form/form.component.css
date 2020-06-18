@@ -1,3 +1,163 @@
-input.ng-invalid.ng-touched {
-    border: 1px solid darkred;
+.form-component {
+    padding-top: 100px;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-bottom: 15px;
+    width: 400px
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #284b63;
+    outline: 0;
+    font-size: 1.6rem;
+    color: #3c6e71;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 18px;
+    cursor: text;
+    text-transform: uppercase;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #284b63;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #3c6e71, #284b63);
+    border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: #3c6e71;
+    font-weight: 700;
+}
+
+    /* reset input */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+
+#user-info {
+    padding-bottom: 20px;
+}
+
+.invalid-data {
+    font-size: 16px;
+    color: #c2185b;
+    margin-bottom: 20px;
+}
+
+.table {
+    padding-top: 20px;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #6c757d;
+}
+
+.basic-describe {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.img-icon {
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+.name-book {
+    font-size: 16px;
+    color: #353535;
+    margin-bottom: 0;
+}
+
+.author-book {
+    font-size: 14px;
+    color: #353535;
+}
+
+.choose-quantity {
+    padding-top: 13px;
+}
+
+.btn-little {
+    background-color: #284b63;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-little p {
+    color: white;
+    font-size: 15px;
+    margin-bottom: 0;
+    width: 36px;
+}
+
+.quantity-book {
+    font-size: 16px;
+    color: #353535;
+    margin: 0 5px;
+    padding-top: 10px;
+}
+
+.price-book {
+    font-size: 16px;
+    color: #353535;
+    margin-top: 10px;
+}
+
+.price-decs {
+    padding-top: 13px;
+}
+
+.summary-styling ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.summary-styling p {
+    font-size: 20px;
+    color: #353535;
+    text-transform: uppercase;
+}
+
+.btn-main-cart {
+    background-color: #284b63;
+    border-radius: 0;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px 20px 6px 20px;
+}
+
+button.btn-main-cart[disabled] {
+    background-color: #3c6e71;
 }
