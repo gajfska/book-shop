@@ -1,48 +1,55 @@
-<h2>Podsumowanie zamówienia</h2>
-    <h3>Dane osobowe</h3>
-        <p>Imię: {{user.name}}</p>
-        <p>Nazwisko: {{user.surname}}</p>
-        <p>Telefon: {{user.phone}}</p>
-        <p>Mail: {{user.email}}</p>
-<br>
+<div class="container order-component">
+    <div class="row">
+        <h2>Podsumowanie zamówienia</h2>
+        <div class="summary-desc">
+            <h3>Dane osobowe</h3>
+                <p><strong>Imię:</strong> {{user.name}}</p>
+                <p><strong>Nazwisko:</strong> {{user.surname}}</p>
+                <p><strong>Telefon:</strong> {{user.phone}}</p>
+                <p><strong>Mail:</strong> {{user.email}}</p>
 
-<h3>Dane adresowe</h3>
-    <p>ul. {{addres.street}} {{addres.buildNumber}}</p>
-    <p>{{addres.zipCode}} {{addres.city}}</p>
-
-<h3>Dane zamówienia</h3>
-
-<div class="list-group col-sm-12">
-    <div class="list-group-item" style="padding-bottom: 50px">
-        <div class="col-md-4">
-            <h4>Produkt</h4>
+            <h3>Dane adresowe</h3>
+                <p>ul. {{addres.street}} {{addres.buildNumber}}</p>
+                <p>{{addres.zipCode}} {{addres.city}}</p>
         </div>
-        <div class="col-md-4">
-            <h4>Ilość</h4>
-        </div>
-        <div class="col-md-4">
-            <h4>Cena</h4>
+
+
+        <h3>Dane zamówienia</h3>
+
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col" class="basic-describe">Produkt</th>
+                <th scope="col" class="basic-describe">Ilość</th>
+                <th scope="col" class="basic-describe">Cena</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr *ngFor="let book of books; let i = index">
+                <th scope="row">
+                    <div class="pull-left">
+                        <img src="{{book.image}}" alt="" class="img-responsive img-icon">
+                    </div>
+                    <p class="name-book">{{book.name}}</p>
+                    <p class="author-book">{{book.author}}</p>
+                </th>
+
+                <td class="choose-quantity">
+                    <p class="quantity-book">{{book.quantity}}</p>
+                </td>
+
+                <td class="price-decs">
+                    <p class="price-book">{{book.price}} zł</p>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+
+        <div class="pull-right">
+            <h4>Do zapłaty: {{sum}} zł</h4>
         </div>
     </div>
 </div>
-
-<div class="list-group col-md-12">
-    <div class="list-group-item" style="padding-bottom: 60px" *ngFor="let book of books; let i = index">
-        <div class="col-md-4">
-            <div class="pull-left">
-                <img src="{{book.image}}" alt="" class="img-responsive" style="max-height: 50px; margin-right: 10px">
-            </div>
-            <a>{{book.name}}</a>
-            <br>
-            <a>{{book.author}}</a>
-        </div>
-        <div class="col-md-4">
-            <a>{{book.quantity}}</a>
-        </div>
-        <div class="col-md-4">
-                {{book.price}}
-        </div>
-    </div>
-</div>
-
-<h4>Do zapłaty: {{sum}}</h4>

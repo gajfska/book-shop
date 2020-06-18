@@ -1,0 +1,49 @@
+.order-component {
+    padding-top: 80px;
+}
+
+.summary-desc p {
+    font-size: 16px;
+}
+
+.basic-describe {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.img-icon {
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+.name-book {
+    font-size: 16px;
+    color: #353535;
+    margin-bottom: 0;
+}
+
+.author-book {
+    font-size: 14px;
+    color: #353535;
+}
+
+.choose-quantity {
+    padding-top: 13px;
+}
+s
+.quantity-book {
+    font-size: 16px;
+    color: #353535;
+    margin: 0 5px;
+    padding-top: 10px;
+}
+
+.price-book {
+    font-size: 16px;
+    color: #353535;
+    margin-top: 10px;
+}
+
+.price-decs {
+    padding-top: 13px;
+}

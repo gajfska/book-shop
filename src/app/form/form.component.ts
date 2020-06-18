@@ -47,6 +47,7 @@ export class FormComponent  implements OnInit, DoCheck {
 
     ngOnInit() {
         this.books = this.cartService.getBooks();
+        console.log(this.books);
     }
 
     ngDoCheck() {
