@@ -36,6 +36,12 @@ The application presents an example book store, which is designed to show the en
 
 ## Installation
 
+After downloading the repository you need to download npm:
+```sh
+$ npm install
+```
+Next run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
 
 ## Live
 
