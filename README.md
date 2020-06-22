@@ -1,27 +1,42 @@
 # BookStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+## Project Overview
 
-## Development server
+The application presents an example book store, which is designed to show the entire shopping process. The application consists of 4 subpages.
+1. Home
+- downloading data from Firebase after entering the application page
+- displaying previously downloaded data in a specific format, i.e. each book contains the cover, its title, author, number of pages, and two buttons:
+  - ADD TO CART, which will add a specific item to the cart,
+   - ORDER, which will direct you to the stage of completing the form
+- in the header, there is a search engine (after the title or author of the book) and a tag how many books are in the basket
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+2. Shopping cart page
+- displaying a list of books selected by the user,
+- the ability to increase the number of books or delete the entire item,
+- the NEXT button, which will direct you to the stage of completing the form
 
-## Code scaffolding
+3. Form page
+- preparation of the form
+- using template-driven when working with a form,
+- the SUMMARY button, which will direct you to the order summary stage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+4. Order summary page
+- displaying data from the form and selected books
 
-## Build
+## Tech/framework used
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- HTML
+- Angular 9.1.3 
+    - Animations
+    - Routers
+- CSS
+- Bootstrap
+- Material Design
+- Firebase
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Live
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+https://bookshop.gajska.pl/shoppinglist
