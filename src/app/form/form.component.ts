@@ -4,13 +4,15 @@ import {Book} from '../shared/book.model';
 import {CartService} from '../cart/cart.service';
 import {FormService} from './form.service';
 import {Addres, User} from './form.model';
+import {deleteAnimation} from '../shared/animations';
 
 
 
 @Component({
     selector: 'app-form',
     templateUrl: './form.component.html',
-    styleUrls: ['./form.component.css']
+    styleUrls: ['./form.component.css'],
+    animations: [ deleteAnimation ]
 })
 
 export class FormComponent  implements OnInit, DoCheck {

@@ -10,7 +10,7 @@
             </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let book of books; let i = index">
+                <tr [@deleteBook] *ngFor="let book of books; let i = index">
                     <th scope="row">
                         <div class="pull-left">
                             <img src="{{book.image}}" alt="" class="img-responsive img-icon">
