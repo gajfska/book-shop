@@ -2,11 +2,13 @@ import {Component, DoCheck} from '@angular/core';
 import {CartService} from '../cart/cart.service';
 import {Book} from '../shared/book.model';
 import {BookService} from '../booklist/book.service';
+import {searchAnimation} from '../shared/animations';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
-    styleUrls: ['./header.component.css']
+    styleUrls: ['./header.component.css'],
+    animations: [searchAnimation]
 })
 
 export class HeaderComponent implements DoCheck {

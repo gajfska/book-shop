@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div *ngIf="show" class="search">
+    <div *ngIf="show" class="search" [@searchBook]>
         <div class="pull-left">
             <div class="form__group field">
                 <input type="input" class="form__field" [(ngModel)]="search" placeholder="Name" name="name" id='name' required />

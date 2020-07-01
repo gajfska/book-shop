@@ -116,10 +116,10 @@
     margin: 0;
 }
 
-/*.search {*/
-    /*display: block;*/
-    /*position: absolute;*/
-    /*top: 100%;*/
-    /*width: 100%;*/
-    /*background: #fff;*/
-/*}*/
+.search {
+    display: block;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background: #3c6e71;
+}
